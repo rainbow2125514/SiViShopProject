@@ -2,16 +2,20 @@ import { Route, Routes } from "react-router-dom";
 import { ROUTERS } from "./utils/router";
 import MasterLayout from "./pages/users/theme/masterLayout";
 import HomePage from "./pages/users/homePage";
+import ProfilePage from "./pages/users/profilePage";
 
 const renderUserRouter = () => {
     const userRouters = [
             {
                 path: ROUTERS.USER.HOME,
                 component: <HomePage />,
-            }
+            },
+            {
+                path: ROUTERS.USER.PROFILE,
+                component: <ProfilePage />,
+            },
         ];
     
-        console.log(userRouters)
     return (
         <MasterLayout>
             <Routes>
