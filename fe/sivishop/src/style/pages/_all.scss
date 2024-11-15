@@ -1,7 +1,6 @@
 @use "sass:map";
 @import "theme";
 @import "responsive";
-
 .html,
 .body {
     margin: 0,
@@ -17,6 +16,15 @@
     width: 100%;
     background: map.get($theme-colors, "main");
 }
+
+.footer_background {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 400px;
+    background: #F1F5FB;
+}
+
 
 .container {
     max-width: 1170px;

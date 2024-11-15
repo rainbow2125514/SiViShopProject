@@ -76,7 +76,6 @@
 .shop_cart {
     display: flex;
     justify-content: end;
-    align-items: center;
 
     svg {
         font-size: 25px;
@@ -130,8 +129,11 @@
         a {
             text-decoration: none;
             color: black;
-            font-size: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 16px;
             font-weight: 800;
+            transition: all 0;
         }
         }
 
@@ -139,7 +141,9 @@
             
             text-decoration: none;
             color: green;
-            font-size: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 16px;
             font-weight: 1000;
         }
     }

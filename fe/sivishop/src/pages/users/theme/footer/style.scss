@@ -1,0 +1,30 @@
+@import "../../../../style/pages/theme";
+
+.Footer_block {
+    display: flex;
+    padding: 100px 0 0 0;
+
+    div {
+
+
+        ul {
+            list-style: none;
+            line-height: 1.8;
+        }
+    }
+}
+
+.inputInfo {
+    display: flex;
+    height: 30px;
+    input{
+        display: flex;
+        border-radius: 0;
+    }
+    a{
+        display: flex;
+        align-items: center;
+        width: 100px;
+        border-radius: 0;
+    }
+}
