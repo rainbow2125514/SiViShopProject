@@ -26,11 +26,31 @@ const Header = () => {
                 name: "Trang chủ",
                 path: ROUTERS.USER.HOME,
                 isActive: location.pathname === "/" ? true:false,
+                child: [
+                    {
+                        name: "item1",
+                        path: ROUTERS.USER.HOME,
+                    },
+                    {
+                        name: "item2",
+                        path: ROUTERS.USER.HOME,
+                    }
+                ]
             },
             {
                 name: "Cửa hàng",
                 path: ROUTERS.USER.PRODUCTS,
                 isActive: location.pathname.indexOf(ROUTERS.USER.PRODUCTS) === 1 ? true:false,
+                child: [
+                    {
+                        name: "item1",
+                        path: ROUTERS.USER.HOME,
+                    },
+                    {
+                        name: "item2",
+                        path: ROUTERS.USER.HOME,
+                    }
+                ]
             },
             {
                 name: "Sản phẩm",
@@ -39,7 +59,7 @@ const Header = () => {
                 isShowSubMenu: false,
                 child: [
                     {
-                        name: "Trang chủ",
+                        name: "item1",
                         path: ROUTERS.USER.HOME,
                     }
                 ]
@@ -48,11 +68,23 @@ const Header = () => {
                 name: "Bài viết",
                 path: "",
                 isActive:false,
+                child: [
+                    {
+                        name: "item1",
+                        path: ROUTERS.USER.HOME,
+                    }
+                ]
             },
             {
                 name: "Liên hệ",
                 path: "",
-                isActive:false
+                isActive:false,
+                child: [
+                    {
+                        name: "item1",
+                        path: ROUTERS.USER.HOME,
+                    }
+                ]
             }
         ])
     }, [location])
@@ -115,6 +147,15 @@ const Header = () => {
                                     <Link to={menu.path}>
                                         {menu.name}
                                     </Link>
+                                    {menu.child && (
+                                        <ul className="header__menu__dropdown">
+                                            {menu.child.map((childItem,childIndex) =>(
+                                                <li key={`${menuKey}-${childIndex}`}>
+                                                    <Link to={childItem.path}>{childItem.name}</Link>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    )}
                                 </li>
                                 ))
                                 }
@@ -133,6 +174,11 @@ const Header = () => {
                             </ul>
                         </div>
                     </div>
+                </div>
+            </div>
+            <div className="header_bottom">
+                <div className="container">
+
                 </div>
             </div>
         </>

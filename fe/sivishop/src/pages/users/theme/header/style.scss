@@ -93,12 +93,13 @@
         list-style: none;
         text-decoration: none;
         position: relative;
+
         span {
             top: -8px;
             left: 25px;
             position: absolute;
             height: 20px;
-            width:  20px;
+            width: 20px;
             background-color: green;
             border-radius: 50%;
             color: white;
@@ -110,6 +111,7 @@
             font-weight: bold;
         }
     }
+
     li:first-child {
         padding-right: 15px;
     }
@@ -125,20 +127,55 @@
         padding: 0 10px;
 
         li {
-            
-        a {
-            text-decoration: none;
-            color: black;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-size: 16px;
-            font-weight: 800;
-            transition: all 0;
+            position: relative;
+
+            a {
+                text-decoration: none;
+                color: black;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                font-size: 16px;
+                font-weight: 800;
+                transition: all 0;
+            }
         }
+
+        li:hover .header__menu__dropdown {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .header__menu__dropdown {
+            position: absolute;
+            display: block;
+            background: black;
+            list-style: none;
+            width: 150px;
+            z-index: 9;
+            padding: 5px;
+            transition: all, 0.3s;
+            visibility: hidden;
+            opacity: 0;
+
+            li {
+                position: relative;
+
+                a {
+                    text-decoration: none;
+                    color: white;
+                    text-transform: none;
+                    font-size: 13px;
+                    transition: all 0;
+                }
+            }
+            li:hover a {
+                color: green;
+                transition: all, 0.3s;
+            }
         }
 
         .active a {
-            
+
             text-decoration: none;
             color: green;
             text-transform: uppercase;
@@ -147,4 +184,11 @@
             font-weight: 1000;
         }
     }
+}
+
+.header_bottom {
+    height: 400px;
+    align-items: center;
+    background:  pink;
+    
 }
