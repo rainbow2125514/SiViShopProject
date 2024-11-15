@@ -6,6 +6,9 @@ import { FaLinkedin } from "react-icons/fa6";
 import { Link, useLocation } from "react-router-dom";
 import { IoCartOutline } from "react-icons/io5";
 import { ROUTERS } from "utils/router";
+import { IoMdMenu } from "react-icons/io";
+import { Button } from "react-bootstrap";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function formatNumber(number, decimalPlaces = 2) {
     // Làm tròn số đến số chữ số thập phân cần thiết
@@ -138,7 +141,7 @@ const Header = () => {
             <div className="header_middle">
                 <div className="container">
                     <div className="row">
-                        <div className="col-lg-3">LOGO</div>
+                        <div className="col-lg-3 menu_logo">LOGO</div>
                         <div className="col-lg-6 menu_bar">
                             <ul>
                                 {
@@ -178,7 +181,35 @@ const Header = () => {
             </div>
             <div className="header_bottom">
                 <div className="container">
-
+                    <div className="row">
+                    <div className="col-lg-3 list_menu_item">
+                        <ul>
+                            <li>
+                                <Button className="button_list_item"><IoMdMenu /><span>Danh sách sản phẩm</span></Button>
+                            </li>
+                            <li>
+                                <ul>
+                                    <li>
+                                        Thịt tươi
+                                    </li>
+                                    <li>
+                                        Rau củ
+                                    </li>
+                                    <li>
+                                        Nước trái cây
+                                    </li>
+                                    <li>
+                                        Trái cây
+                                    </li>
+                                    <li>
+                                        Hải sản
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div className="col-lg">LOGO</div>
+                    </div>
                 </div>
             </div>
         </>
