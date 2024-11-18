@@ -1,6 +1,8 @@
 @use "sass:map";
 @import "../../../../style/pages/theme";
 
+$bannerImage: "/assets/users/images/image.png";
+
 .header_top_left {
   font-size: 14px;
   display: flex;
@@ -172,6 +174,7 @@
           transition: all 0;
         }
       }
+
       li:hover a {
         color: green;
         transition: all, 0.3s;
@@ -192,17 +195,86 @@
 .header_bottom {
   height: 400px;
   align-items: center;
-  background: pink;
 }
 
-.list_menu_item {
-  ul {
+.list_menu_area {
+  margin-left: 37px;
+  border: 1px solid #F0F0F0;
+  padding-left: 0px;
+  padding-right: 0px;
+
+  .list_menu_item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     list-style: none;
+    gap: 10px;
+
+    li:first-child {
+      margin-top: 10px;
+    }
+
+    li {
+      padding-left: 20px;
+    }
   }
 }
 
+.list_find_and_support_area {
+  list-style: none;
+  height: 40px;
+
+
+  .find_area {
+
+    .find_text_area {
+      border-radius: 0;
+    }
+
+    display: flex;
+
+    .button_find {
+      border: 1px solid #F0F0F0;
+      padding-left: 0px;
+      padding-right: 0px;
+      border-left-width: 0px;
+      border-right-width: 0px;
+      width: 120px;
+      background-color: #006478;
+      border-color: #006478;
+      border-radius: 0;
+      --bs-btn-active-border-color: #004d5c;
+      --bs-btn-active-bg: #004d5c;
+    }
+
+    .button_find:hover {
+      background-color: #004d5c;
+      border-color: #004d5c;
+      transition: all, 0.3s;
+    }
+  }
+
+  ul {
+    list-style: none;
+    display: flex;
+  }
+
+  .phone_icon {
+    size: 30px;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+
+
 .button_list_item {
-  width: 250px;
+  border: 1px solid #F0F0F0;
+  padding-left: 0px;
+  padding-right: 0px;
+  border-left-width: 0px;
+  border-right-width: 0px;
+  width: 100%;
   background-color: #006478;
   border-color: #006478;
   border-radius: 0;
@@ -214,4 +286,44 @@
   background-color: #004d5c;
   border-color: #004d5c;
   transition: all, 0.3s;
+}
+.menu_logo {
+  padding-left: 42px;
+}
+
+.phone_area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+
+  .phone_icon_background {
+    position: relative;
+    background: #F0F0F0;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+
+    .phone_icon {
+      color: black;
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      height: 20px;
+      width: 20px;
+    }
+  }
+
+  ul {
+    padding-left: 10px;
+    margin-bottom: 0;
+    list-style: none;
+  }
+}
+
+.image_info {
+  background-image: url($bannerImage);
+  height: 400px;
+  width: 600px;
+  background-size: 100% 100%;
 }

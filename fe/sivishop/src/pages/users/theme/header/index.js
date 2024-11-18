@@ -9,6 +9,8 @@ import { ROUTERS } from "utils/router";
 import { IoMdMenu } from "react-icons/io";
 import { Button } from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Form from 'react-bootstrap/Form';
+import { LuPhoneCall } from "react-icons/lu";
 
 function formatNumber(number, decimalPlaces = 2) {
     // Làm tròn số đến số chữ số thập phân cần thiết
@@ -28,7 +30,7 @@ const Header = () => {
             {
                 name: "Trang chủ",
                 path: ROUTERS.USER.HOME,
-                isActive: location.pathname === "/" ? true:false,
+                isActive: location.pathname === "/" ? true : false,
                 child: [
                     {
                         name: "item1",
@@ -43,7 +45,7 @@ const Header = () => {
             {
                 name: "Cửa hàng",
                 path: ROUTERS.USER.PRODUCTS,
-                isActive: location.pathname.indexOf(ROUTERS.USER.PRODUCTS) === 1 ? true:false,
+                isActive: location.pathname.indexOf(ROUTERS.USER.PRODUCTS) === 1 ? true : false,
                 child: [
                     {
                         name: "item1",
@@ -58,7 +60,7 @@ const Header = () => {
             {
                 name: "Sản phẩm",
                 path: "",
-                isActive:false,
+                isActive: false,
                 isShowSubMenu: false,
                 child: [
                     {
@@ -70,7 +72,7 @@ const Header = () => {
             {
                 name: "Bài viết",
                 path: "",
-                isActive:false,
+                isActive: false,
                 child: [
                     {
                         name: "item1",
@@ -81,7 +83,7 @@ const Header = () => {
             {
                 name: "Liên hệ",
                 path: "",
-                isActive:false,
+                isActive: false,
                 child: [
                     {
                         name: "item1",
@@ -145,22 +147,22 @@ const Header = () => {
                         <div className="col-lg-6 menu_bar">
                             <ul>
                                 {
-                                menus.map((menu,menuKey) =>(
-                                    <li key={menuKey} className={menu.isActive?"active":""}>
-                                    <Link to={menu.path}>
-                                        {menu.name}
-                                    </Link>
-                                    {menu.child && (
-                                        <ul className="header__menu__dropdown">
-                                            {menu.child.map((childItem,childIndex) =>(
-                                                <li key={`${menuKey}-${childIndex}`}>
-                                                    <Link to={childItem.path}>{childItem.name}</Link>
-                                                </li>
-                                            ))}
-                                        </ul>
-                                    )}
-                                </li>
-                                ))
+                                    menus.map((menu, menuKey) => (
+                                        <li key={menuKey} className={menu.isActive ? "active" : ""}>
+                                            <Link to={menu.path}>
+                                                {menu.name}
+                                            </Link>
+                                            {menu.child && (
+                                                <ul className="header__menu__dropdown">
+                                                    {menu.child.map((childItem, childIndex) => (
+                                                        <li key={`${menuKey}-${childIndex}`}>
+                                                            <Link to={childItem.path}>{childItem.name}</Link>
+                                                        </li>
+                                                    ))}
+                                                </ul>
+                                            )}
+                                        </li>
+                                    ))
                                 }
                             </ul>
                         </div>
@@ -182,33 +184,50 @@ const Header = () => {
             <div className="header_bottom">
                 <div className="container">
                     <div className="row">
-                    <div className="col-lg-3 list_menu_item">
-                        <ul>
-                            <li>
-                                <Button className="button_list_item"><IoMdMenu /><span>Danh sách sản phẩm</span></Button>
-                            </li>
-                            <li>
+                        <div className="col-lg-3 list_menu_area">
+                            <Button className="button_list_item"><IoMdMenu /><span>  Danh sách sản phẩm</span></Button>
+                            <ul className="list_menu_item">
+                                <li>
+                                    Thịt tươi
+                                </li>
+                                <li>
+                                    Rau củ
+                                </li>
+                                <li>
+                                    Nước trái cây
+                                </li>
+                                <li>
+                                    Trái cây
+                                </li>
+                                <li>
+                                    Hải sản
+                                </li>
+                            </ul>
+                        </div>
+                        <div className="col-lg">
+                            <div className="row">
+                            <div className="col-lg-9 list_find_and_support_area">
+                                <div className="find_area">
+                                    <Form.Control type="text" placeholder="Bạn đang làm gì?" className="find_text_area" />
+                                    <Button className="button_find"><IoMdMenu /><span>Tìm kiếm</span></Button>
+                                </div>
+                            </div>
+                            <div className="col-lg-3 phone_area">
+                                <a className="phone_icon_background"><LuPhoneCall className="phone_icon" /></a>
                                 <ul>
-                                    <li>
-                                        Thịt tươi
+                                    <li style={{ fontSize: 19 }}>
+                                        <strong>0656.789.456</strong>
                                     </li>
                                     <li>
-                                        Rau củ
-                                    </li>
-                                    <li>
-                                        Nước trái cây
-                                    </li>
-                                    <li>
-                                        Trái cây
-                                    </li>
-                                    <li>
-                                        Hải sản
+                                        Hỗ trợ 24/7
                                     </li>
                                 </ul>
-                            </li>
-                        </ul>
-                    </div>
-                    <div className="col-lg">LOGO</div>
+                            </div>
+                            </div>
+                            <div className="row image_info">
+                                
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
